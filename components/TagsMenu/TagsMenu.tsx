@@ -4,7 +4,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import css from './TagsMenu.module.css';
-import { NoteTag } from "@/app/types/note";
+import { NoteTag } from "@/types/note";
 
 // Список тегів для нотаток
 const tags: NoteTag[] = ["Todo", "Work", "Personal", "Meeting", "Shopping"];
