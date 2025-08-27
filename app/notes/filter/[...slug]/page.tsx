@@ -6,14 +6,14 @@ import { Metadata } from "next";
 
 
 type Props = {
-  params: Promise<{ slug?: string[] }>;
+  params: Promise<{ slug: string[] }>;
 };
 
 
 export const generateMetadata = async ({params}: Props): Promise<Metadata> => {
     const { slug } = await params;
-    const tag = slug?.[0] && slug[0].toLowerCase() !== "all" ? slug[0] : undefined;
-
+    const tag = slug[0].toLowerCase() === "all" ? undefined : slug[0].toLowerCase();
+  
     return {
         title: tag ? `Notes filtered by ${tag}` : "All notes",
         description: tag ? `Viewing notes with tag ${tag} tag.`
